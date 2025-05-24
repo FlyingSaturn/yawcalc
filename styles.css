@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+body {
+    font-family: Lexend, sans-serif !important;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+h2 {
+    font-weight: 400;
+}
+
+  input[type='number']{
+    font-family: monospace;
+    font-weight: 400;
+    background-color: black;
+    color: white;
+  }
+
+  label {
+    font-weight: 275;
+  }
+
+  #app, header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;	
+  }
+  .head1{
+	margin-bottom:0em;
+	text-align:center;
+  }
+  .head2{
+  	margin-top:0em;
+	text-align:center;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  form div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+#result, #netherstart, #netherend, footer{
+    gap: 0.75rem;
+    margin: .5em;
+}
+
+form #but{
+    display:flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    justify-items: center !important;
+}
+button {
+    background-color: #A7A7A7;
+    font-family: Lexend, sans-serif;
+    color: black;
+    border:none;
+    padding: 0.3em 1.2em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+  }
+
+.copy {
+   font-size:0.8rem;
+   }
+.nether {
+  margin:.5em;
+  margin-left: 0.2em !important;
+  margin-right: 0em !important;
+}
+.hello-result {
+ margin-left: 0em !important;
+ margin-right: 0em !important;
+}
+button:hover {
+	background-color: white;
+	color: black;
+}
+button:active {
+	background-color: #464545;
+	color: white;
+}
+
+input[type="checkbox"] {
+  width: 2em; /*Desired width*/
+  height: 2em; /*Desired height*/
+  cursor: pointer;
+  margin-left: 0px;
+}
+
+#footer {
+  margin: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+a:link {
+  color: #BBB;
+}
+a:visited {
+  color: #9A9A9A;
+}
+a:hover {
+  color: #FFF;
+}
+a:active {
+  color: #959595;
+}

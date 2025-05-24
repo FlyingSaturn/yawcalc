@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="styles.css">
+      <title>Yaw Calculator</title>
+   </head>
+   <body>
+      <header>
+         <h1 class="head1">Yaw Calculator: A Minecraft Utility<br>(w/ Nether Portal Calculator)</h1>
+      </header>
+      <div id="app">
+         <form id="current-form">
+            <h2>Where are you standing at?</h2>
+            <div>
+               <label for="locX">Location X:</label>
+               <input type="number" autocomplete="off" step="0.001" name="locX" id="locX">
+            </div>
+            <div>
+               <label for="locZ">Location Z:</label>
+               <input type="number" autocomplete="off" step="0.001" name="locZ" id="locZ">
+            </div>
+            <div class = "nether">
+               <input type="checkbox" id="netherEquivCurrent" name="netherEquivCurrent">
+               <label for="netherEquivCurrent">Starting Portal in Overworld coordinates, convert to Nether coordinates</label>
+            </div>
+            <h2>Where do you want to go?</h2>
+            <div>
+               <label for="destX">Location X:</label>
+               <input type="number" autocomplete="off" step = "0.001" name="destX" id="destX">
+            </div>
+            <div>
+               <label for="destZ">Location Z:</label>
+               <input type="number" autocomplete="off" step="0.001" name="destZ" id="destZ">
+            </div>
+            <div class = "nether">
+               <input type="checkbox" id="netherEquivDest" name="netherEquivDest">
+               <label for="netherEquivDest">Destination Portal in Overworld coordinates, convert to Nether coordinates</label>
+            </div>
+            <div id = "but">
+               <button type="submit">Submit</button>
+            </div>
+         </form>
+         <div class="abc">
+            <div id="netherstart" class = "hello-result"></div>
+            <button id="start-copy" class="copy" onclick="copyInnerHTML('netherstart')">Copy Start</button>
+         </div>
+         <div class="abc">
+            <div id="netherend" class="hello-result"></div>
+            <button id="end-copy" class="copy" onclick="copyInnerHTML('netherend')">Copy Destination</button>
+         </div>
+         <div class="abc">
+            <div id="result" class="hello-result"></div>
+            <button id="result-copy" class="copy" onclick="copyInnerHTML('result')">Copy Yaw Angle</button>
+         </div>
+         <div id="footer">
+            <a href="https://github.com/FlyingSaturn/yawcalc-web">The Github Repository</a>
+            <p>Made with &lt;3</p>
+         </div>
+      </div>
+      <script src="script.js"></script>
+   </body>
+</html>
