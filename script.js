@@ -90,7 +90,7 @@ function calculateYaw(e) {
     const processIt = (locX.length > 0 && locZ.length > 0 && destX.length > 0 && destZ.length > 0);
     console.log(processIt, locX, locZ, destX, destZ);
     if (processIt) {
-        const yaw = calculateYaw(xcurrent, zcurrent, xdest, zdest);
+        const yaw = getYawAngle(parseFloat(locX), parseFloat(locZ), parseFloat(destX), parseFloat(destZ));
 	document.getElementById("result").innerHTML = `Calculated Yaw: ${yaw} :)`;
 	buttonVisible("result-copy"); 
     }
@@ -99,14 +99,12 @@ function calculateYaw(e) {
     }
 }
 
-function yawCalc(...)
-{
 /**
  * Returns the Minecraft yaw angle (as a string) that points from the
  * current position (xcurrent, zcurrent) to the destination (xdest, zdest).
  * Matches the logic and quirks of the original Java method.
  */
-function calculateYaw(xcurrent, zcurrent, xdest, zdest) {
+function getYawAngle(xcurrent, zcurrent, xdest, zdest) {
   const LIMIT = 30_000_000;
 
   // Coordinate bounds‑check (±30 000 000 in either axis)
@@ -136,7 +134,5 @@ function calculateYaw(xcurrent, zcurrent, xdest, zdest) {
   if (slope === -180)    return "180.0";
 
   // Default path – always keep one decimal digit like Java’s “‑123.4”
-  return slope.toFixed(1);
-}
-	
+  return slope.toFixed(1);  
 }
