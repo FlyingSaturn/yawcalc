@@ -34,7 +34,10 @@ I wanted it to be a Minecraft plugin, but it wasn't successful, since we play on
 
 Regardless, [please check out at its GitHub repo](https://github.com/FlyingSaturn/yaw-calculator).
 
+
+
 ## Future Plans
 
-- Just give a tutorial on yaw angles and tell the people why it's essential.
-- those og meta tags... 
+- Just give a tutorial on yaw angles and tell the people why it's essential. Proper formatting (exactly like Minecraft) will work too.
+- those og meta tags
+- A swap button
