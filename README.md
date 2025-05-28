@@ -14,7 +14,7 @@ The checkboxes convert [Overworld](https://minecraft.fandom.com/wiki/Overworld) 
 
 [A Wikipedia article on Yaw](https://en.wikipedia.org/wiki/Yaw_(rotation))
 
-![image](https://github.com/FlyingSaturn/yawcalc-web/raw/refs/heads/main/yaw-angles.svg)
+![An illustration on different yaw angles based on clock directions, along with the representation of the cardinal directions](https://github.com/FlyingSaturn/yawcalc-web/raw/refs/heads/main/yaw-angles.svg)
 
 "Digging along" probably won't be right... However, programmers have a reputation for using incorrect grammar.
 
