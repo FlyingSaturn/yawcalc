@@ -49,8 +49,8 @@ function calculateYaw(e) {
     buttonInvisible("start-copy");
     buttonInvisible("end-copy");
     buttonInvisible("result-copy");
-    // Get the values from the form inputs
-    
+
+    // Get the values from the form inputs 
     let locX = data.get("locX");
     let locZ = data.get("locZ");
     let destX = data.get("destX");
@@ -105,15 +105,6 @@ function calculateYaw(e) {
  * Matches the logic and quirks of the original Java method.
  */
 function getYawAngle(xcurrent, zcurrent, xdest, zdest) {
-  const LIMIT = 30_000_000;
-
-  // Coordinate bounds‑check (±30 000 000 in either axis)
-  if (
-    Math.abs(xcurrent) > LIMIT || Math.abs(zcurrent) > LIMIT ||
-    Math.abs(xdest)    > LIMIT || Math.abs(zdest)    > LIMIT
-  ) {
-    return "Error: Coordinates are too large. Minecraft has a world limit of ±30,000,000.";
-  }
 
   // z is negated for the atan2 call (equivalent to zdest - zcurrent in Java comment)
   let slope = Math.atan2(zcurrent - zdest, xdest - xcurrent) * (180 / Math.PI);
