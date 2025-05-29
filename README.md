@@ -6,17 +6,17 @@ The checkboxes convert [Overworld](https://minecraft.wiki/w/Overworld) coordinat
 
 ## Related Info
 
-[Rotation](https://minecraft.wiki/w/Rotation)
+[Rotation](https://minecraft.wiki/w/Rotation): Talks about yaw, pitch and roll.
 
-[Basic Information](https://minecraft.wiki/w/Chunk_format/Entity/Rotation_(yaw))
+[Basic Information](https://minecraft.wiki/w/Chunk_format/Entity/Rotation_(yaw)): Mentions which angle corresponds to what cardinal direction
 
-[Debug Screen, Left Side. Ctrl+F to find XYZ and Yaw (the most important link here)](https://minecraft.wiki/w/Debug_screen#Left_side)
+[Debug Screen](https://minecraft.wiki/w/Debug_screen#Left_side): The most important link here. Mentions the specific formatting. Check the section titled "Left Side". Press Ctrl+F to find XYZ and Yaw under the "Facing" line.
 
 [A Wikipedia article on Yaw](https://en.wikipedia.org/wiki/Yaw_(rotation))
 
 ![A circular diagram showing yaw angles in degrees mapped to clock positions, with labelled cardinal directions (North, South, East, West) and axis notations (+X, -X, +Z, -Z).](https://github.com/FlyingSaturn/yawcalc-web/raw/refs/heads/main/yaw-angles.svg)
 
-The above image is under public domain (CC0 license)**. If the image doesn't render, then you can visit here: https://commons.m.wikimedia.org/w/index.php?title=File:Yaw_Angles_in_Minecraft.svg&oldid=1037437538
+The above image is under public domain (CC0 license)**. If the image doesn't render, then you can visit here: https://commons.m.wikimedia.org/w/index.php?title=File:Yaw_Angles_in_Minecraft.svg
 
 "Digging along" probably won't be right... However, programmers have a reputation for using incorrect grammar.
 
