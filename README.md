@@ -2,7 +2,7 @@
 
 You can enter your location and destination. Minecraft uses three digits of precision in X and Z coordinates.
 
-The checkboxes convert [Overworld](https://minecraft.fandom.com/wiki/Overworld) coordinates to [the Nether](https://minecraft.wiki/w/The_Nether) coordinates.
+The checkboxes convert [Overworld](https://minecraft.wiki/w/Overworld) coordinates to [the Nether](https://minecraft.wiki/w/The_Nether) coordinates.
 
 ## Related Info
 
@@ -15,6 +15,8 @@ The checkboxes convert [Overworld](https://minecraft.fandom.com/wiki/Overworld) 
 [A Wikipedia article on Yaw](https://en.wikipedia.org/wiki/Yaw_(rotation))
 
 ![A circular diagram showing yaw angles in degrees mapped to clock positions, with labelled cardinal directions (North, South, East, West) and axis notations (+X, -X, +Z, -Z).](https://github.com/FlyingSaturn/yawcalc-web/raw/refs/heads/main/yaw-angles.svg)
+
+The above image is under public domain and is titled **"Yaw Angles in Minecraft"**. If the image doesn't render, then you can go to https://commons.m.wikimedia.org/w/index.php?title=File:Yaw_Angles_in_Minecraft.svg&oldid=1037437538
 
 "Digging along" probably won't be right... However, programmers have a reputation for using incorrect grammar.
 
