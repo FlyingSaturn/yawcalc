@@ -6,7 +6,7 @@ The checkboxes convert [Overworld](https://minecraft.wiki/w/Overworld) coordinat
 
 ## Related Info
 
-[Rotation](https://minecraft.wiki/w/Rotation): Talks about yaw, pitch and roll.
+[Rotation](https://minecraft.wiki/w/Rotation): It talks about yaw, pitch, and roll.
 
 [Basic Information](https://minecraft.wiki/w/Chunk_format/Entity/Rotation_(yaw)): Mentions which angle corresponds to what cardinal direction
 
@@ -14,9 +14,9 @@ The checkboxes convert [Overworld](https://minecraft.wiki/w/Overworld) coordinat
 
 [A Wikipedia article on Yaw](https://en.wikipedia.org/wiki/Yaw_(rotation))
 
-![A circular diagram showing yaw angles in degrees mapped to clock positions, with labelled cardinal directions (North, South, East, West) and axis notations (+X, -X, +Z, -Z).](https://github.com/FlyingSaturn/yawcalc-web/raw/refs/heads/main/yaw-angles.svg)
+![A circular diagram showing yaw angles in degrees mapped to clock positions, with labelled cardinal directions (North, South, East, West) and axis notations (+X, -X, +Z, -Z).](https://github.com/FlyingSaturn/yawcalc/raw/refs/heads/main/yaw-angles.svg)
 
-The above image is under public domain (CC0 license)**. If the image doesn't render, then you can visit here: https://commons.m.wikimedia.org/w/index.php?title=File:Yaw_Angles_in_Minecraft.svg
+The above image is under the public domain (CC0 license)**. If the image doesn't render, then you can visit here: https://commons.m.wikimedia.org/w/index.php?title=File:Yaw_Angles_in_Minecraft.svg
 
 "Digging along" probably won't be right... However, programmers have a reputation for using incorrect grammar.
 
