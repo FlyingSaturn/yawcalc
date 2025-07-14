@@ -38,6 +38,17 @@ function copyInnerHTML(elementid) {
     navigator.clipboard.writeText(text);
 }
 
+function cardinalDirection(angle) {
+	if (angle <= -135.1 && angle >= 135.1)
+		return "North"
+	if (angle <= 135.0 && angle >= 45.1)
+		return "West"
+	if (angle <= 45.0 && angle >= -44.9)
+		return "South"
+	if (angle >= -135.0 && angle <= -45.0)
+		return "East"
+}
+
 function calculateYaw(e) {
     e.preventDefault();
     const form = e.target;
