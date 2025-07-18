@@ -31,7 +31,9 @@ function buttonInvisible(elementid) {
 function copyInnerHTML(elementid) {
     console.log("Copying " + `${elementid}` + "...");
     let text = document.getElementById(elementid).innerHTML;
-    if (text.split(":").length - 1 == 1)
+	if (text.split(" - ").length == 2) // There's a single hyphen, with spaces
+		text = text.substring(text.indexOf("-") + 1);
+	else if (text.split(":").length - 1 == 1) // How many portions after the colon
         text = text.substring(text.indexOf(":") + 1);
     else if (text.split(":").length - 1 == 2)
         text = text.substring(text.indexOf(":") + 1, text.lastIndexOf(":"));
@@ -121,7 +123,7 @@ function calculateYaw(e) {
 	document.getElementById("result").innerHTML = `Calculated Yaw: ${yaw} :)`;
 	buttonVisible("result-copy"); 
 	const line = fermatter(yaw)
-	document.getElementById("facing-line").innerHTML = line
+	document.getElementById("facing-line").innerHTML = `The facing line - ${line}`
 	buttonVisible("facing-line-copy")
     }
     if (!ficurrent && !fidest && !processIt) {
