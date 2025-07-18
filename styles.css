@@ -51,7 +51,7 @@ h2 {
     gap: 0.25rem;
   }
 
-#result, #netherstart, #netherend, footer{
+.hello-result, footer{
     gap: 0.75rem;
     margin: .5em;
 }

@@ -1,6 +1,7 @@
 buttonInvisible('result-copy');
 buttonInvisible('end-copy');
 buttonInvisible('start-copy');
+buttonInvisible('facing-line-copy');
 document.addEventListener("DOMContentLoaded", function() {
     // Get the form element
     const form = document.getElementById("current-form");
@@ -28,7 +29,7 @@ function buttonInvisible(elementid) {
 }
 
 function copyInnerHTML(elementid) {
-    console.log("Copying " + `${elementid}`);
+    console.log("Copying " + `${elementid}` + "...");
     let text = document.getElementById(elementid).innerHTML;
     if (text.split(":").length - 1 == 1)
         text = text.substring(text.indexOf(":") + 1);
@@ -39,14 +40,29 @@ function copyInnerHTML(elementid) {
 }
 
 function cardinalDirection(angle) {
-	if (angle <= -135.1 && angle >= 135.1)
-		return "North"
+	if ((angle <= -135.1 && angle > -180.0) || (angle <= 180.0 && angle >= 135.1))
+		return "north"
 	if (angle <= 135.0 && angle >= 45.1)
-		return "West"
+		return "west"
 	if (angle <= 45.0 && angle >= -44.9)
-		return "South"
+		return "south"
 	if (angle >= -135.0 && angle <= -45.0)
-		return "East"
+		return "east"
+}
+
+function fermatter(yaw) {
+	let string = cardinalDirection(yaw)
+	let axis = ""
+	if (string === "north")
+		axis = "negative Z"
+	if (string === "west")
+		axis = "negative X"
+	if (string === "south")
+		axis = "positive Z"
+	if (string === "east")
+		axis = "positive X"
+	const res = `Facing: ${string} (Towards ${axis}) (${yaw}/xx.x)`
+	return res
 }
 
 function calculateYaw(e) {
@@ -104,6 +120,9 @@ function calculateYaw(e) {
         const yaw = getYawAngle(parseFloat(locX), parseFloat(locZ), parseFloat(destX), parseFloat(destZ));
 	document.getElementById("result").innerHTML = `Calculated Yaw: ${yaw} :)`;
 	buttonVisible("result-copy"); 
+	const line = fermatter(yaw)
+	document.getElementById("facing-line").innerHTML = line
+	buttonVisible("facing-line-copy")
     }
     if (!ficurrent && !fidest && !processIt) {
         document.getElementById("result").innerHTML = `Either enter all the values</br>or tick the respective checkbox</br>after entering a value`;
