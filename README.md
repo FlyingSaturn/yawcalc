@@ -40,6 +40,6 @@ Regardless, [please check out its GitHub repo](https://github.com/FlyingSaturn/y
 
 ## Future Plans
 
-- Just give a tutorial on yaw angles and tell the people why it's essential. Proper formatting (exactly like Minecraft) will work too.
+- Just give a tutorial on yaw angles and tell the people why it's essential. Proper formatting (exactly like Minecraft) will work too. (Formatting part done, writing a section on Minecraft Wiki)
 - those og meta tags
-- A swap button
+- A swap button (Done)
