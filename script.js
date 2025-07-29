@@ -2,6 +2,17 @@ buttonInvisible('result-copy');
 buttonInvisible('end-copy');
 buttonInvisible('start-copy');
 buttonInvisible('facing-line-copy');
+
+document.getElementById('swap-coords').addEventListener('click', (event) => {
+    event.preventDefault();
+    input1 = document.getElementById('locX');
+    input2 = document.getElementById('locZ');
+    input3 = document.getElementById('destX');
+    input4 = document.getElementById('destZ');
+    swapInputValues(input1, input3)
+    swapInputValues(input2, input4)
+});
+
 document.addEventListener("DOMContentLoaded", function() {
     // Get the form element
     const form = document.getElementById("current-form");
@@ -31,9 +42,9 @@ function buttonInvisible(elementid) {
 function copyInnerHTML(elementid) {
     console.log("Copying " + `${elementid}` + "...");
     let text = document.getElementById(elementid).innerHTML;
-	if (text.split(" - ").length == 2) // There's a single hyphen, with spaces
-		text = text.substring(text.indexOf("-") + 1);
-	else if (text.split(":").length - 1 == 1) // How many portions after the colon
+    if (text.split(" - ").length == 2) // There's a single hyphen, with spaces
+        text = text.substring(text.indexOf("-") + 1);
+    else if (text.split(":").length - 1 == 1) // How many portions after the colon
         text = text.substring(text.indexOf(":") + 1);
     else if (text.split(":").length - 1 == 2)
         text = text.substring(text.indexOf(":") + 1, text.lastIndexOf(":"));
@@ -41,30 +52,37 @@ function copyInnerHTML(elementid) {
     navigator.clipboard.writeText(text);
 }
 
+function swapInputValues(input1, input2)
+{
+    [input1.value, input2.value] = [input2.value, input1.value]
+}
+
+
+
 function cardinalDirection(angle) {
-	if ((angle <= -135.1 && angle > -180.0) || (angle <= 180.0 && angle >= 135.1))
-		return "north"
-	if (angle <= 135.0 && angle >= 45.1)
-		return "west"
-	if (angle <= 45.0 && angle >= -44.9)
-		return "south"
-	if (angle >= -135.0 && angle <= -45.0)
-		return "east"
+    if ((angle <= -135.1 && angle > -180.0) || (angle <= 180.0 && angle >= 135.1))
+        return "north"
+    if (angle <= 135.0 && angle >= 45.1)
+        return "west"
+    if (angle <= 45.0 && angle >= -44.9)
+        return "south"
+    if (angle >= -135.0 && angle <= -45.0)
+        return "east"
 }
 
 function fermatter(yaw) {
-	let string = cardinalDirection(yaw)
-	let axis = ""
-	if (string === "north")
-		axis = "negative Z"
-	if (string === "west")
-		axis = "negative X"
-	if (string === "south")
-		axis = "positive Z"
-	if (string === "east")
-		axis = "positive X"
-	const res = `Facing: ${string} (Towards ${axis}) (${yaw}/xx.x)`
-	return res
+    let string = cardinalDirection(yaw)
+    let axis = ""
+    if (string === "north")
+        axis = "negative Z"
+    if (string === "west")
+        axis = "negative X"
+    if (string === "south")
+        axis = "positive Z"
+    if (string === "east")
+        axis = "positive X"
+    const res = `Facing: ${string} (Towards ${axis}) (${yaw}/xx.x)`
+    return res
 }
 
 function calculateYaw(e) {
@@ -72,20 +90,29 @@ function calculateYaw(e) {
     const form = e.target;
     const data = new FormData(form);
 
+
+    // Hides all the previous results
     document.getElementById("result").innerHTML = "";
     document.getElementById("netherstart").innerHTML = "";
     document.getElementById("netherend").innerHTML = ""
+    document.getElementById("facing-line").innerHTML = ""
     buttonInvisible("start-copy");
     buttonInvisible("end-copy");
     buttonInvisible("result-copy");
+    buttonInvisible('facing-line-copy');
+
 
     // Get the values from the form inputs 
     let locX = data.get("locX");
     let locZ = data.get("locZ");
     let destX = data.get("destX");
     let destZ = data.get("destZ");
+
+    // Nether checkboxes
     const netherEquivCurrent = document.querySelector('#netherEquivCurrent').checked;
     const netherEquivDest = document.querySelector('#netherEquivDest').checked;
+
+    // Kinda divide the coords by 8 for nether checkboxes
     if (netherEquivCurrent) {
         locX = divideByEight(locX);
         locZ = divideByEight(locZ);
@@ -94,37 +121,47 @@ function calculateYaw(e) {
         destX = divideByEight(destX);
         destZ = divideByEight(destZ);
     }
+
+    // Ensuring that we aren't using both NULL values
     const ficurrent = (netherEquivCurrent && !(locX.length === 0 && locZ.length === 0))
     const fidest = (netherEquivDest && !(destX.length === 0 && destZ.length === 0))
+
     if (ficurrent) {
-        xString = locX.length === 0 ? "" : "X=" + `${locX}`;
-        zString = locZ.length === 0 ? "" : "Z=" + `${locZ}`;
+        xString = locX.length === 0 ? "" : `X=${locX}`;
+        zString = locZ.length === 0 ? "" : `Z=${locZ}`;
         buttonVisible("start-copy");
         if (xString.length > 0 && zString.length > 0)
-            document.getElementById("netherstart").innerHTML = "Start from here in the Nether Biome: " + `${locX}` + ", " + `${locZ}`;
+            document.getElementById("netherstart").innerHTML = `Start from here in the Nether Biome: ${locX}, ${locZ}`;
         else
-            document.getElementById("netherstart").innerHTML = "Start from here in the Nether Biome: " + `${xString}` + `${zString}`;
+            document.getElementById("netherstart").innerHTML = `Start from here in the Nether Biome: ${xString}${zString}`;
     }
+
     if (fidest) {
-        xString = destX.length === 0 ? "" : "X=" + `${destX}`;
-        zString = destZ.length === 0 ? "" : "Z=" + `${destZ}`;
+        xString = destX.length === 0 ? "" : `X=${destX}`;
+        zString = destZ.length === 0 ? "" : `Z=${destZ}`;
         buttonVisible("end-copy");
         if (xString.length > 0 && zString.length > 0)
-            document.getElementById("netherend").innerHTML = "Destination in the Nether Biome: " + `${destX}` + ", " + `${destZ}`;
+            document.getElementById("netherend").innerHTML = `Destination in the Nether Biome: ${destX}, ${destZ}`;
         else
-            document.getElementById("netherend").innerHTML = "Destination in the Nether Biome: " + `${xString}` + `${zString}`;
+            document.getElementById("netherend").innerHTML = `Destination in the Nether Biome: ${xString}${zString}`;
     }
 
     // Build the url
     const processIt = (locX.length > 0 && locZ.length > 0 && destX.length > 0 && destZ.length > 0);
     console.log(processIt, locX, locZ, destX, destZ);
     if (processIt) {
+
+        // Processing the yaw angle
         const yaw = getYawAngle(parseFloat(locX), parseFloat(locZ), parseFloat(destX), parseFloat(destZ));
-	document.getElementById("result").innerHTML = `Calculated Yaw: ${yaw} :)`;
-	buttonVisible("result-copy"); 
-	const line = fermatter(yaw)
-	document.getElementById("facing-line").innerHTML = `The facing line - ${line}`
-	buttonVisible("facing-line-copy")
+
+    // Showing the result of the yaw angle
+    document.getElementById("result").innerHTML = `Calculated Yaw: ${yaw} :)`;
+    buttonVisible("result-copy");
+
+    // Showing the result of the facing line
+    const line = fermatter(yaw)
+    document.getElementById("facing-line").innerHTML = `The facing line - ${line}`
+    buttonVisible("facing-line-copy")
     }
     if (!ficurrent && !fidest && !processIt) {
         document.getElementById("result").innerHTML = `Either enter all the values</br>or tick the respective checkbox</br>after entering a value`;
@@ -157,5 +194,5 @@ function getYawAngle(xcurrent, zcurrent, xdest, zdest) {
   if (slope === -180)    return "180.0";
 
   // Default path – always keep one decimal digit like Java’s “‑123.4”
-  return slope.toFixed(1);  
+  return slope.toFixed(1);
 }

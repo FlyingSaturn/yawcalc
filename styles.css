@@ -27,27 +27,24 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;	
+    justify-content: space-around;    
   }
   .head1{
-	margin-bottom:0em;
-	text-align:center;
+    margin-bottom:0em;
+    text-align:center;
   }
   .head2{
-  	margin-top:0em;
-	text-align:center;
+      margin-top:0em;
+    text-align:center;
   }
   form {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 0.25rem;
   }
 
   form div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     gap: 0.25rem;
   }
 
@@ -57,10 +54,8 @@ h2 {
 }
 
 form #but{
-    display:flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    justify-items: center !important;
+    margin-bottom: 2em;
+    
 }
 button {
     background-color: #A7A7A7;
@@ -77,7 +72,21 @@ button {
 .copy {
    font-size:0.8rem;
    }
+
+.swap {
+   margin-top: 0.5em;
+   margin-bottom: 0.5em;
+}
+
+.swap-div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
 .nether {
+  display: flex;
+  align-items: center;
   margin:.5em;
   margin-left: 0.2em !important;
   margin-right: 0em !important;
@@ -87,12 +96,12 @@ button {
  margin-right: 0em !important;
 }
 button:hover {
-	background-color: white;
-	color: black;
+    background-color: white;
+    color: black;
 }
 button:active {
-	background-color: #464545;
-	color: white;
+    background-color: #464545;
+    color: white;
 }
 
 input[type="checkbox"] {
