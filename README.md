@@ -28,7 +28,7 @@ The weird thing about the coordinate system conventions followed by Minecraft is
 
 Just a normal slope calculator which calculates two Minecraft coordinates. One has only to enter the X and Z coords for this to work. 
 
-Used Maven and Spring Boot for this.
+Used Vanilla JS for this.
 
 I really should thank the coding folks on the Bentovid and the Wintrcat Discord servers for making my static code better. Tbh, it would've been a nightmare without their contributions.
 
@@ -41,5 +41,5 @@ Regardless, [please check out its GitHub repo](https://github.com/FlyingSaturn/y
 ## Future Plans
 
 - Just give a tutorial on yaw angles and tell the people why it's essential. Proper formatting (exactly like Minecraft) will work too. (Formatting part done, writing a section on Minecraft Wiki)
-- those og meta tags
+- those og meta tags (done)
 - A swap button (Done)
