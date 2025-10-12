@@ -59,7 +59,7 @@ function swapInputValues(input1, input2)
 
 
 
-function cardinalDirection(angle) {
+function pre25w37aCardinalDirection(angle) {
     if ((angle <= -135.1 && angle > -180.0) || (angle <= 180.0 && angle >= 135.1))
         return "north"
     if (angle <= 135.0 && angle >= 45.1)
@@ -70,8 +70,20 @@ function cardinalDirection(angle) {
         return "east"
 }
 
+function cardinalDirection(angle) {
+    if ((angle <= -135.1 && angle > -180.0) || (angle <= 180.0 && angle >= 135.0))
+        return "north"
+    if (angle <= 134.9 && angle >= 45.0)
+        return "west"
+    if (angle <= 44.9 && angle >= -45.0)
+        return "south"
+    if (angle >= -135.0 && angle <= -45.1)
+        return "east"
+}
+
+
 function fermatter(yaw) {
-    let string = cardinalDirection(yaw)
+    let string = pre25w37aCardinalDirection(yaw)
     let axis = ""
     if (string === "north")
         axis = "negative Z"
