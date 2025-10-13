@@ -105,10 +105,26 @@ button:active {
 }
 
 input[type="checkbox"] {
+  accent-color: #333;
   width: 2em; /*Desired width*/
   height: 2em; /*Desired height*/
   cursor: pointer;
   margin-left: 0px;
+}
+
+input[type="radio"] {
+  accent-color: #333;
+  width: 1.5rem; /*Desired width*/
+  height: 1.5rem; /*Desired height*/
+  cursor: pointer;
+  margin-left: 0px;
+}
+
+.cardinal-system-convention {
+  display: flex;
+  align-items: center;
+  margin-left: 0.2em !important;
+  margin-right: 0em !important;
 }
 
 #footer {
