@@ -82,9 +82,13 @@ function cardinalDirection(angle) {
 }
 
 
-function fermatter(yaw) {
-    let string = pre25w37aCardinalDirection(yaw)
-    let axis = ""
+function fermatter(yaw, cardinal) {
+	let string = ""
+	if (cardinal === "pre")
+    	string = pre25w37aCardinalDirection(yaw)
+	else if (cardinal === "onwards")
+		string = cardinalDirection(yaw)
+	let axis = ""
     if (string === "north")
         axis = "negative Z"
     if (string === "west")
@@ -119,6 +123,7 @@ function calculateYaw(e) {
     let locZ = data.get("locZ");
     let destX = data.get("destX");
     let destZ = data.get("destZ");
+	let cardinal = data.get("cardinal");
 
     // Nether checkboxes
     const netherEquivCurrent = document.querySelector('#netherEquivCurrent').checked;
@@ -171,7 +176,7 @@ function calculateYaw(e) {
     buttonVisible("result-copy");
 
     // Showing the result of the facing line
-    const line = fermatter(yaw)
+    const line = fermatter(yaw, cardinal)
     document.getElementById("facing-line").innerHTML = `The facing line - ${line}`
     buttonVisible("facing-line-copy")
     }
