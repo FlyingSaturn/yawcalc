@@ -11,6 +11,18 @@
       <title>Yaw Calculator</title>
    </head>
    <body>
+	  <div id="sr-announcer" role="status" aria-live="polite" 
+	  	style="
+		  position: absolute;
+		  width: 1px;
+		  height: 1px;
+		  margin: -1px;
+		  padding: 0;
+		  overflow: hidden;
+		  clip: rect(0 0 0 0);
+		  border: 0;
+		">
+	  </div>
       <header>
          <h1 class="head1">Yaw Calculator: A Minecraft Utility<br>(w/ Nether Portal Calculator)</h1>
       </header>
@@ -57,19 +69,19 @@
             </div>
          </form>
 		 <div class="fermatter abc">
-		    <output role="status" form="current-form" for="locX locZ destX destZ netherEquivCurrent netherEquivDest pre onwards" id="facing-line" class="hello-result"></output>
+		    <output form="current-form" for="locX locZ destX destZ netherEquivCurrent netherEquivDest pre onwards" id="facing-line" class="hello-result"></output>
 			<button id = "facing-line-copy" class="copy" onclick="copyInnerHTML('facing-line')">Copy Facing Line</button>
 		 </div>
          <div class="abc">
-            <output role="status" form="current-form" for="locX locZ netherEquivCurrent" id="netherstart" class = "hello-result"></output>
+            <output form="current-form" for="locX locZ netherEquivCurrent" id="netherstart" class = "hello-result"></output>
             <button id="start-copy" class="copy" onclick="copyInnerHTML('netherstart')">Copy Start</button>
          </div>
          <div class="abc">
-            <output role="status" form="current-form" for="destX destZ netherEquivDest" id="netherend" class="hello-result"></output>
+            <output form="current-form" for="destX destZ netherEquivDest" id="netherend" class="hello-result"></output>
             <button id="end-copy" class="copy" onclick="copyInnerHTML('netherend')">Copy Destination</button>
          </div>
          <div class="abc">
-            <output role="status" form="current-form" for="locX locZ destX destZ netherEquivCurrent netherEquivDest" id="result" class="hello-result"></output>
+            <output form="current-form" for="locX locZ destX destZ netherEquivCurrent netherEquivDest" id="result" class="hello-result"></output>
             <button id="result-copy" class="copy" onclick="copyInnerHTML('result')">Copy Yaw Angle</button>
          </div>
          <div id="footer">
