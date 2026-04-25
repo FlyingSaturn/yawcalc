@@ -2,6 +2,7 @@ buttonInvisible('result-copy');
 buttonInvisible('end-copy');
 buttonInvisible('start-copy');
 buttonInvisible('facing-line-copy');
+announcer.textContent = "";
 
 document.getElementById('swap-coords').addEventListener('click', (event) => {
     event.preventDefault();
@@ -28,7 +29,9 @@ function speak()
 	const startText = document.getElementById("netherstart").textContent;
 	const endText = document.getElementById("netherend").textContent;
 	const combined = `${resultText}. ${facingText}. ${startText}. ${endText}.`;
-	document.getElementById("sr-announcer").textContent = combined;	
+	setTimeout(() => {
+  		document.getElementById("sr-announcer").textContent = combined;	
+	}, 50);
 }
 
 function divideByEight(a) {
@@ -193,6 +196,7 @@ function calculateYaw(e) {
         document.getElementById("result").innerHTML = `Either enter all the values</br>or tick the respective checkbox</br>after entering a value`;
     }
 	speak();
+	
 }
 
 /**
