@@ -28,6 +28,7 @@ function speak()
 	const facingText = match ? match[0] : "";
 	const startText = document.getElementById("netherstart").textContent;
 	const endText = document.getElementById("netherend").textContent;
+	document.getElementById("sr-announcer").textContent = "";
 	const combined = `${resultText}. ${facingText}. ${startText}. ${endText}.`;
 	setTimeout(() => {
   		document.getElementById("sr-announcer").textContent = combined;	
