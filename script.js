@@ -124,6 +124,7 @@ function calculateYaw(e) {
     document.getElementById("netherstart").innerHTML = "";
     document.getElementById("netherend").innerHTML = ""
     document.getElementById("facing-line").innerHTML = ""
+	document.getElementById("sr-announcer").textContent = "";
     buttonInvisible("start-copy");
     buttonInvisible("end-copy");
     buttonInvisible("result-copy");
