@@ -20,6 +20,16 @@ document.addEventListener("DOMContentLoaded", function() {
     form.addEventListener("submit", calculateYaw);
 });
 
+function speak()
+{
+	const resultText = document.getElementById("result").textContent;
+	const facingText = document.getElementById("facing-line").textContent;
+	const startText = document.getElementById("netherstart").textContent;
+	const endText = document.getElementById("netherend").textContent;
+	const combined = `${facingText}. ${startText}. ${endText}. ${resultText}.`;
+	document.getElementById("sr-announcer").textContent = combined;	
+}
+
 function divideByEight(a) {
     if (a.length > 0) {
         a /= 8;
@@ -56,8 +66,6 @@ function swapInputValues(input1, input2)
 {
     [input1.value, input2.value] = [input2.value, input1.value]
 }
-
-
 
 function pre25w37aCardinalDirection(angle) {
     if ((angle <= -135.1 && angle > -180.0) || (angle <= 180.0 && angle >= 135.1))
@@ -171,18 +179,19 @@ function calculateYaw(e) {
         // Processing the yaw angle
         const yaw = getYawAngle(parseFloat(locX), parseFloat(locZ), parseFloat(destX), parseFloat(destZ));
 
-    // Showing the result of the yaw angle
-    document.getElementById("result").innerHTML = `Calculated Yaw: ${yaw} :)`;
-    buttonVisible("result-copy");
-
-    // Showing the result of the facing line
-    const line = fermatter(yaw, cardinal)
-    document.getElementById("facing-line").innerHTML = `The facing line - ${line}`
-    buttonVisible("facing-line-copy")
+	    // Showing the result of the yaw angle
+	    document.getElementById("result").innerHTML = `Calculated Yaw: ${yaw} :)`;
+	    buttonVisible("result-copy");
+	
+	    // Showing the result of the facing line
+	    const line = fermatter(yaw, cardinal)
+	    document.getElementById("facing-line").innerHTML = `The facing line - ${line}`
+	    buttonVisible("facing-line-copy")
     }
     if (!ficurrent && !fidest && !processIt) {
         document.getElementById("result").innerHTML = `Either enter all the values</br>or tick the respective checkbox</br>after entering a value`;
     }
+	speak();
 }
 
 /**
