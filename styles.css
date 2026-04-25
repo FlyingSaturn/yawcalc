@@ -8,9 +8,20 @@ body {
     padding: 0;
   }
 
+fieldset {
+  border: none;              /* remove default box */
+  margin: 1em 0;
+  padding: 0;
+}
+
 legend {
-	font-size: 1.5rem;
-    font-weight: 400;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1em;
+}
+
+fieldset > div {
+  margin-bottom: 1em;
 }
 
   input[type='number']{
