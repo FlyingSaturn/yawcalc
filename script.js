@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function speak()
 {
 	const resultText = document.getElementById("result").textContent.slice(0, -3);
-	const match = abc.match(/Facing:.*?\)/);
+	const match = document.getElementById("facing-line").match(/Facing:.*?\)/);
 	const facingText = match ? match[0] : "";
 	const startText = document.getElementById("netherstart").textContent;
 	const endText = document.getElementById("netherend").textContent;
