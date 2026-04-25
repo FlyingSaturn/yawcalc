@@ -10,7 +10,7 @@ body {
 
 fieldset {
   border: none;              /* remove default box */
-  margin: 1em 0;
+  margin: 0.7em 0;
   padding: 0;
 }
 
