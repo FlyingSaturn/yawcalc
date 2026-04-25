@@ -22,11 +22,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function speak()
 {
-	const resultText = document.getElementById("result").textContent;
-	const facingText = document.getElementById("facing-line").textContent;
+	const resultText = document.getElementById("result").textContent.slice(0, -3);
+	let abc = document.getElementById("facing-line").textContent;
+	const facingText = abc.slice((abc.indexOf("F"), 1 + (abc.indexOf(")")))
 	const startText = document.getElementById("netherstart").textContent;
 	const endText = document.getElementById("netherend").textContent;
-	const combined = `${facingText}. ${startText}. ${endText}. ${resultText}.`;
+	const combined = `${resultText}. ${facingText}. ${startText}. ${endText}.`;
 	document.getElementById("sr-announcer").textContent = combined;	
 }
 
