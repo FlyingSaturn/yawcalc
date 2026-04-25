@@ -32,14 +32,14 @@
 	            <legend id="start-legend"><h2>Where are you standing at?</h2></legend>
 	            <div>
 	               <label for="locX">Location X:</label>
-	               <input type="number" autocomplete="off" step="0.001" name="locX" id="locX" aria-describedby="start-legend">
+	               <input type="number" autocomplete="off" step="0.001" name="locX" id="locX" >
 	            </div>
 	            <div>
 	               <label for="locZ">Location Z:</label>
-	               <input type="number" autocomplete="off" step="0.001" name="locZ" id="locZ" aria-describedby="start-legend">
+	               <input type="number" autocomplete="off" step="0.001" name="locZ" id="locZ" >
 	            </div>
 	            <div class = "nether">
-	               <input type="checkbox" id="netherEquivCurrent" name="netherEquivCurrent" aria-describedby="start-legend">
+	               <input type="checkbox" id="netherEquivCurrent" name="netherEquivCurrent" >
 	               <label for="netherEquivCurrent">Starting Portal in Overworld coordinates, convert to Nether coordinates</label>
 	            </div>
 			</fieldset>
@@ -50,23 +50,23 @@
 	            <legend id="dest-legend"><h2>Where do you want to go?</h2></legend>
 	            <div>
 	               <label for="destX">Location X:</label>
-	               <input type="number" autocomplete="off" step = "0.001" name="destX" id="destX" aria-describedby="dest-legend">
+	               <input type="number" autocomplete="off" step = "0.001" name="destX" id="destX" >
 	            </div>
 	            <div>
 	               <label for="destZ">Location Z:</label>
-	               <input type="number" autocomplete="off" step="0.001" name="destZ" id="destZ" aria-describedby="dest-legend">
+	               <input type="number" autocomplete="off" step="0.001" name="destZ" id="destZ" >
 	            </div>
 	            <div class = "nether">
-	               <input type="checkbox" id="netherEquivDest" name="netherEquivDest" aria-describedby="dest-legend">
+	               <input type="checkbox" id="netherEquivDest" name="netherEquivDest" >
 	               <label for="netherEquivDest">Destination Portal in Overworld coordinates, convert to Nether coordinates</label>
 	            </div>
 			</fieldset>
 			<fieldset>
 				<legend id="version-legend"><h2> Which version of Minecraft are you using? </h2></legend>
 				<div class = "cardinal-system-convention">
-					<input type="radio" id="pre" name="cardinal" value="pre" aria-describedby="version-legend">
+					<input type="radio" id="pre" name="cardinal" value="pre" >
 					<label for="pre"> Pre 1.21.8 (or pre-25w37a)</label>
-					<input type="radio" id="onwards" name="cardinal" value="onwards" aria-describedby="version-legend" checked>
+					<input type="radio" id="onwards" name="cardinal" value="onwards"  checked>
 					<label for="onwards"> 1.21.8 onwards (25w37a onwards)</label>
 				</div>
 			</fieldset>
