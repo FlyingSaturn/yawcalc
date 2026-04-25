@@ -2,7 +2,7 @@ buttonInvisible('result-copy');
 buttonInvisible('end-copy');
 buttonInvisible('start-copy');
 buttonInvisible('facing-line-copy');
-announcer.textContent = "";
+document.getElementById("sr-announcer").textContent = "";
 
 document.getElementById('swap-coords').addEventListener('click', (event) => {
     event.preventDefault();
